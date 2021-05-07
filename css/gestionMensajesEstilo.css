@@ -1,0 +1,70 @@
+
+.seccionMensajes{ /*seccion*/
+    display: block;
+    float: left;
+    width: 1080px;
+    height: auto;
+    margin: 2rem;
+    box-shadow: 5 10px 10px 5px rgba(62, 66, 77, 0.37);
+    padding: 5px;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    background-color: rgba(227, 231, 240, 0.452);
+}
+
+td{
+    font-size: 20px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+    background-color: burlywood;
+    margin: 0rem;
+    color: darkblue;
+    font-weight: bold;
+    margin-top: 4rem;
+    
+    
+}
+.links{
+    text-decoration: none;
+    font-size: 2rem;
+    
+}
+
+table{
+    margin-top: 5rem;
+    margin-left: 4rem;
+}
+
+#titutoUsuario{
+    color: rgb(15, 15, 46);
+    font-weight: bold;
+    font-size: 2.7rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    
+}
+
+.imagenPublicacion{     /*imagen*/
+    display: block;
+    float: left;
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    margin-top: 2rem;
+    margin-right: 5rem;
+}
+.boton{         /*class del boton diseño*/
+    background-color: rgb(43, 120, 228);
+    color: white;
+    font-size: 1.1rem;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.boton:hover{
+    background-color: rgb(100, 130, 228);
+    cursor: pointer;
+}

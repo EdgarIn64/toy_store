@@ -1,0 +1,70 @@
+#contenedorChat{
+    display: block;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1020px;
+    height: 500px;
+    background-color: rgba(5, 1, 255, 0.13);
+    margin-bottom: 8rem;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 1rem;
+} 
+#mensajes{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 400px;
+    background-color: rgba(142, 144, 144, 0.315);
+    margin-bottom: 1rem;
+    margin-top: 0px;
+    padding: 10px;
+}
+#mensajeUsuario{
+    display: block;
+    float: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 700px;
+    height: 30px;
+    background-color: rgba(169, 169, 169, 0.267);
+    border: rgba(102, 101, 101, 0.787) 1px solid;
+}
+#enviarMensaje{
+    display: block;
+    float: right;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
+}
+#mensajeRecibido{
+    display: block;
+    float: right;
+    clear: both;
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    background-color: rgba(64, 170, 138, 0.363);
+    margin: 5px;
+    margin-right: 20px;
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+}
+#mensajeEnviado{
+    display: block;
+    float: left;
+    clear: both;
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    background-color: rgba(41, 109, 173, 0.363);
+    margin: 5px;
+    margin-left: 20px;
+    font-size: 2rem;
+    padding: 10px;
+}

@@ -1,0 +1,115 @@
+
+#tituloListaCarrito{
+    display: block;
+    clear: both; 
+    font-size: 2rem;
+    padding: 3px;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    margin-bottom: .1rem;
+}
+#listaPublicacionesDelCarro{ /*seccion*/
+    display: block;
+    float: left;
+    width: 1020px;
+    height: auto;
+    background-color: rgba(173, 189, 189, 0.24);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: .8rem;
+    border-radius: 1.5rem;
+}
+.publicacionDelCarro{   /*div donde se encuentra la informacion de la publicacion*/
+    display: block;
+    float: left;
+    width: 998px;
+    height: auto;
+    padding: .5rem;
+   /* border: blue 1px solid;*/
+   margin-top: 3px;
+   margin-bottom: 3px;
+}
+hr{ 
+    border: rgba(87, 149, 151, 0.281) 4px solid;
+    border-radius: 1rem;
+    width: 80%;
+}
+.imagenPublicacion{     /*imagen*/
+    display: block;
+    float: left;
+    width: 250px;
+    height: 250px;
+    border: rgb(255, 255, 255) 1px solid;
+    margin: 5px;
+}
+.informacionPublicacion{    /*div donde esta la tabla (info) y los botones de la publicacion*/
+    display: block;
+    float: left;
+    width: 705px;
+    height: 250px;
+    margin: 5px;
+    margin-left: 15px;
+    padding: 3px;
+    
+}
+.tablaInformacion{
+    display: block;
+    float: left;
+    width: auto;
+    height: auto;
+
+}
+.nombreColumna{     /*td titulo de columnas de la informacion*/
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(97, 94, 94);
+    padding-right: 8px;
+}
+td{
+    padding: 3px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.botonEliminar{
+    display: block;
+    float: right;
+    margin-top: 50px;
+    margin-left: 2px;
+    margin-right: 0px;
+    margin-bottom: 2px;
+}
+.botonContactarVendedor{
+    display: block;
+    float: right;
+    margin-top: 40px;
+    margin-left: 2px;
+    margin-right: 30px;
+    margin-bottom: 2px;
+}
+
+
+#botonRealizarCompra{   /*id del boton para agregarle las funcionalidadaes y su posicion en la pagina*/
+    display: block;
+    float: right;
+    width: 190px;
+    height: 60px;
+    margin-top: 2rem;
+    margin-right: 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-weight: 550;
+}
+.boton{         /*class del boton diseño*/
+    background-color: rgb(43, 120, 228);
+    color: white;
+    font-size: 1.1rem;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.boton:hover{
+    background-color: rgb(100, 130, 228);
+    cursor: pointer;
+}
+

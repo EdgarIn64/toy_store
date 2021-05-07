@@ -1,0 +1,158 @@
+body {
+    background: rgb(255, 255, 255);    
+}
+  
+.contenedor{
+    width: 1243px;
+    background: rgb(255, 255, 255);
+    color:black;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedor .titulo{
+    font-size: 3.5ex;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#pestanas {
+    float: top;
+    font-size: 3ex;
+    font-weight: bold;
+}
+
+#pestanas ul{
+    margin-left: -40px;    
+}
+ 
+#pestanas li{
+    list-style-type: none;
+    float: left; 
+    text-align: center;
+    margin: 0px 2px -2px -0px;
+    background: rgba(169, 169, 169, 0.548);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 2px solid bisque;
+    border-bottom: dimgray;
+    padding: 0px 20px 0px 20px;
+    font-size: 22px; 
+    width: 571px;
+   
+}
+
+#pestanas a:link{
+    text-decoration: none;
+    color: rgb(38, 40, 71);
+    padding-left: 0px;
+    padding-right: 0px;
+} 
+
+#contenidopestanas{
+    clear: both;  
+    background: rgba(0, 17, 253, 0.301);
+    padding: 20px 0px 20px 20px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border: 2px solid bisque;
+    width: 1210px;
+    height: auto;
+    
+}
+
+/*------------------------------------------------------------*/
+
+#listaPublicaciones{ /*seccion*/
+    display: block;
+    clear: both;
+    width: 1010px;
+    height: auto;
+    background-color: rgba(236, 240, 243, 0.781);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: .8rem;
+    border-radius: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 10px 0px rgba(28, 38, 59, 0.8)
+    
+}
+.publicacionHistorial{   /*div donde se encuentra la informacion de la publicacion*/
+    display: block;
+    float: left;
+    width: 990px; 
+    height: auto;
+    padding: .5rem;
+   
+   margin-top: 3px;
+   margin-bottom: 20px;
+}
+hr{ 
+    border: rgba(0, 16, 245, 0.479) 2px solid;
+    border-radius: 1rem;
+    width: 80%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.imagenPublicacion{     /*imagen*/
+    display: block;
+    float: left;
+    width: 245px;
+    height: 250px;
+    border: rgb(255, 255, 255) 1px solid;
+    margin: 5px;
+}
+.informacionPublicacion{    /*div donde esta la tabla (info) y los botones de la publicacion*/
+    display: block;
+    float: left;
+    width: 688px;
+    height: 250px;
+    margin: 5px;
+    margin-left: 15px;
+    padding: 3px;
+    
+}
+.tablaInformacion{
+    display: block;
+    float: left;
+    width: auto;
+    height: auto;
+
+}
+#tabla2{
+    margin-left: 10px; 
+}
+#domicilioTitulo{
+    color: rgb(3, 39, 77);
+    font-size: 20px;
+}
+.nombreColumna{     /*td titulo de columnas de la informacion*/
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(97, 94, 94);
+    padding-right: 8px;
+}
+td{
+    padding: 3px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+
+
+.boton{         /*class del boton diseño*/
+    background-color: rgb(43, 120, 228);
+    color: white;
+    font-size: 1.1rem;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.boton:hover{
+    background-color: rgb(100, 130, 228);
+    cursor: pointer;
+}
