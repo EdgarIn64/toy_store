@@ -25,24 +25,24 @@
 	<br><br>
 	<input type="password" name="contra" placeholder="Contraseña" class="placeholder" required="true">
 	<br><br>
-	<input type="submit" class="boton" name="ingresar" value="Ingresar">
-	<br>
 </form>
+	<a href="principal.php" class="boton">Ingresar</a>
+	<br>
 	<hr>
 	<p>¿No tienes cuenta?<br>Crea una
-<form method="post" action="">
-	<input type="submit" class="boton" name="cuenta" value="Crear cuenta">
+	<br><br>
+	<a href="registrar.php" class="boton">Crear cuenta</a>
 	</p>
-</form>
 <br>
 	<?php   
-//		require('../controlador/login.php');
 		require('../pie.html');
+/*		require('../controlador/login.php');
 		if(isset($_POST["ingresar"]))
 			header("Location: principal.php");
 
 		if(isset($_POST["cuenta"]))
 			header("Location: registrar.php");
+*/
 	?>
 
 </div>

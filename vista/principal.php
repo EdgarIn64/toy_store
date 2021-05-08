@@ -29,7 +29,7 @@
 	<label id="separacion"></label>
 	<?php  
 		require('../pie.html');
-		session_start();
+//		session_start();
 	?>
 </body>
 </html>

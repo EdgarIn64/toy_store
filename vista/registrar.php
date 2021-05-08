@@ -31,8 +31,8 @@
 
 	<?php  
 		if(isset($_POST["registrar"])){
-			require('../controlador/crud_usuario.php');
-			create();
+			//require('../controlador/crud_usuario.php');
+			//create();
 		}
 			//include_once('../controlador/sign_up.php');
 			//header("Location: principal.php");
