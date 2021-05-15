@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Toy Store Mensajes</title>
+	<title>Toy Store</title>
 	<!-- Titulo del encabezado en el menta  -->
 	<meta name="titulo" content="Mensajes">
 	<meta charset="utf-8">
@@ -13,9 +13,15 @@
 <body>
 	<?php  
 		require('../header.html');
+		/*
+		session_start();
+		if(!isset($_SESSION["usuario"])){
+			header("Location: ../index.php");
+		}
+		*/
 	?>
 	<div class="menu"> 
-	<a href="principal.php"><img src="../img/flecha.png?v=<?php echo time(); ?>"></a>
+	<a href="principal.php"><img src="../img/flecha.png?v=<?php echo time(); ?>" style="margin-left: 10px;"></a>
 	</div>	
 
 	<section class="seccionMensajes">

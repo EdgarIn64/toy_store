@@ -16,8 +16,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			width: 1250px;  
-			height: 500px;
-			background-color: fuchsia;
+			height: 550px;
 			border: none;
 			overflow:hidden;
 			position: relative;	
@@ -29,13 +28,11 @@
 		require('../header.html');
 	?>
 	<div class="menu">
-    <a href="principal.php"><img src="../img/flecha.png?v=<?php echo time(); ?>"></a>
+    <a href="principal.php"><img src="../img/flecha.png?v=<?php echo time(); ?>" style="margin-left: 10px;"></a>
 	</div>	
 
-	<iframe src="categoriasContenido.php" title="Iframe historial"></iframe>
-
-
 	<?php  
+		include_once("../controlador/categoriasContenido.php");
 		require('../pie.html');
 	?>
 </body>

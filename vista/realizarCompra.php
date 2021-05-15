@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head> 
-	<title>Toy Store Realizar compra</title>
+	<title>Toy Store</title>
 	<!-- Titulo del encabezado en el menta  -->
 	<meta name="titulo" content="Carrito">
 	<meta charset="utf-8">
@@ -15,7 +15,7 @@
 		require('../header.html');
 	?>
 	<div class="menu">
-	<a href="carrito.php"><img src="../img/flecha.png?v=<?php echo time(); ?>"></a>
+	<a href="carrito.php"><img src="../img/flecha.png?v=<?php echo time(); ?>" style="margin-left: 10px;"></a>
 	</div>	
 	<h2 id="tituloListaCompra">Productos: </h2>
 
@@ -119,9 +119,7 @@
 	<input type="submit" id="botonConfirmarDomicilio" class="boton" value="Confirmar domicilio">
 	</setion>
 </form>
-<br>
-<br>
-
+</section>
 	<?php  
 		require('../pie.html');
 	?>

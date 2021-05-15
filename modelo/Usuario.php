@@ -1,5 +1,5 @@
 <?php 
-include_once("../modelo/AccesoDatos.php");
+include_once("modelo/AccesoDatos.php");
 session_start();
 
 class Usuario {
@@ -52,15 +52,18 @@ class Usuario {
 	public function validarUsuario(){
 		$bandera = false;
 		$sQuery = "";
+		$pubQuery = "";
 		$arrRS = null;
+		$arr = null;
 		$sQuery = "SELECT * FROM usuarios WHERE correo = '".$this->correo."' AND contrasena = '".$this->contrasena."'";
 		//Crear, conectar, ejecutar, desconectar
 		$conexion = new AccesoDatos();
 		if ($conexion->conectar()){
 			$arrRS = $conexion->ejecutarConsulta($sQuery);
-			print_r($arrRS);
-			//Setea valores aqui
 			$_SESSION["datos"]=$arrRS;
+			$pubQuery = "SELECT * FROM publicaciones WHERE id_usuario = '".$_SESSION["datos"][0][0]."'";
+			$arr = $conexion->ejecutarConsulta($pubQuery);
+			$_SESSION["publicacion"]=$arr;
 			$conexion->desconectar();
 			if ($arrRS != null){
 				$this->bandera = true;

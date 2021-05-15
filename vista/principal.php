@@ -13,7 +13,7 @@
 <body>
 	<?php  
 		require('../header.html');
-		require('../menu.html')
+		require('../menu.html');
 	?>
 	<div class="presentacion">
 		<h1>Videos de presentaci&oacute;n</h1>
@@ -29,7 +29,6 @@
 	<label id="separacion"></label>
 	<?php  
 		require('../pie.html');
-//		session_start();
 	?>
 </body>
 </html>

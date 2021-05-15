@@ -10,6 +10,7 @@ header{
     padding-bottom: 0.1px;
     padding-left: 1rem;
     text-align: center;
+    margin: 0px;
 }
 header.pantallas {
 	background-image: linear-gradient(to bottom,#0c0baa 5%, rgb(220,140,32)  90%);
@@ -124,9 +125,9 @@ input.txt {
 #separacion {
     display: block;
     clear: both;
-    height: 5rem;
-    margin-top: 10rem;
-    margin-bottom: 2rem;
+    height: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
 
 }
 

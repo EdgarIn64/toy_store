@@ -67,7 +67,7 @@ body {
 /*------------------------------------------------------------*/
 
 #listaPublicaciones{ /*seccion*/
-    display: block;
+    display: block; 
     clear: both;
     width: 1010px;
     height: auto;
@@ -87,7 +87,6 @@ body {
     width: 990px; 
     height: auto;
     padding: .5rem;
-   
    margin-top: 3px;
    margin-bottom: 20px;
 }
@@ -109,17 +108,17 @@ hr{
 .informacionPublicacion{    /*div donde esta la tabla (info) y los botones de la publicacion*/
     display: block;
     float: left;
-    width: 688px;
-    height: 250px;
+    width: 690px;
+    height: auto;
     margin: 5px;
     margin-left: 15px;
     padding: 3px;
-    
+
 }
 .tablaInformacion{
     display: block;
     float: left;
-    width: auto;
+    width: 460px;
     height: auto;
 
 }
@@ -139,16 +138,16 @@ td{
     display: block;
     float: right;
     margin-top: 3.5rem;
+    margin-left: 0px;
+    width: 170px;
 }
 .verPublicacion{
     display: block;
     float:right;
     margin-top: 20px;
-    margin-left: 18px;
+    margin-left: 0px;
     width: 170px;
 }
-
-
 
 .boton{         /*class del boton diseño*/
     background-color: rgb(43, 120, 228);
@@ -157,8 +156,17 @@ td{
     padding: 7px;
     padding-left: 15px;
     padding-right: 15px;
+    position: static;
 }
 .boton:hover{
     background-color: rgb(100, 130, 228);
     cursor: pointer;
+}
+.tituloContenidoVacio{
+    font-size: 1.6rem;
+    margin: 1rem;
+    color:crimson;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

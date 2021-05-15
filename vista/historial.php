@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Toy Store Historial</title>
+	<title>Toy Store</title>
 	<!-- Titulo del encabezado en el menta  -->
 	<meta name="titulo" content="Historial">
 	<meta charset="utf-8">
@@ -17,7 +17,6 @@
 			margin-right: auto;
 			width: 1250px;  
 			height: 500px;
-			background-color: fuchsia;
 			border: none;
 			overflow:hidden;
 			position: relative;	
@@ -27,12 +26,17 @@
 <body>
 	<?php  
 		require('../header.html');
+/*		session_start();
+		if(!isset($_SESSION["usuario"])){
+			header("Location: ../index.php");
+		}
+*/
 	?>
 	<div class="menu">
-	<a href="principal.php"><img src="../img/flecha.png?v=<?php echo time(); ?>"></a>
+	<a href="principal.php"><img src="../img/flecha.png?v=<?php echo time(); ?>" style="margin-left: 10px;"></a>
 	</div>	
 
-	<iframe src="historialContenido.php" title="Iframe historial"></iframe>
+	<iframe src="../controlador/historialContenido.php" title="Iframe historial"></iframe>
 
 
 	<?php  

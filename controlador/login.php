@@ -1,8 +1,6 @@
 <?php
-/*  Inhabilitado para la primera revisión
-	sin conexión a la base de datos
-
-	include_once("..\modelo\Usuario.php");
+/*
+	include_once("modelo\Usuario.php");
 	$sErr="";
 	$correo="";//$nombre_usuario="";
 	$sNom="";
@@ -32,7 +30,7 @@
 			$sErr = "Error al acceder a la base de datos";
 		}
 		if ($sErr == "")
-			header("Location: ../vista/principal.php");
+			header("Location: vista/principal.php");
 		else{
 			echo "<script type='text/javascript'>alert('No se pudo iniciar sesion')</script>";
 		}
@@ -42,4 +40,5 @@
 			header("Location: error.html");
 	}
 	*/
+	header("Location: vista/principal.php");
 ?>
