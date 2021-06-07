@@ -1,13 +1,18 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Toy Store</title>
-	<!-- Titulo del encabezado en el menta  -->
+	<!-- Titulo del encabezado en el menta -->
 	<meta name="titulo" content="Categorias">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="../img/quintos.png">
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css?v=<?php echo time(); ?>">
+	<script type="text/javascript" src="../js/titulo.js"></script>
+	<script type="text/javascript" src="../js/cambiarPestanna.js"></script>
 	<style>
 		iframe{ 
 			display: block;
@@ -21,11 +26,23 @@
 			overflow:hidden;
 			position: relative;	
 		}
-	</style> 
+	</style>
 </head>
 <body>
 	<?php  
 		require('../header.html');
+		if(!isset($_SESSION["usuario"])){
+			echo "<script type='text/javascript'>
+                    window.location.replace('../index.php');
+                </script>";
+		} 
+		echo "
+		<script type='text/javascript'>
+			document.body.style.backgroundColor= '".$_SESSION['color_fondo']."';
+			document.body.style.color= '".$_SESSION['color_letra']."';
+			document.body.style.fontSize = '".$_SESSION['letra']."';
+		</script>
+		";
 	?>
 	<div class="menu">
     <a href="principal.php"><img src="../img/flecha.png?v=<?php echo time(); ?>" style="margin-left: 10px;"></a>
@@ -33,6 +50,14 @@
 
 	<?php  
 		include_once("../controlador/categoriasContenido.php");
+		echo'
+			<script>
+			$(document).ready(function(){
+				cambiarPestanna(pestanas,pestana1);
+				$("#pestana1").trigger("click");
+			});
+			</script>
+		';
 		require('../pie.html');
 	?>
 </body>

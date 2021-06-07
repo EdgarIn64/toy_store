@@ -13,7 +13,6 @@ body {
 }
 
 .contenedor .titulo{
-    font-size: 3.5ex;
     font-weight: bold;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -21,7 +20,6 @@ body {
 
 #pestanas {
     float: top;
-    font-size: 3ex;
     font-weight: bold;
 }
 
@@ -109,39 +107,37 @@ hr{
 .informacionPublicacion{    /*div donde esta la tabla (info) y los botones de la publicacion*/
     display: block;
     float: left;
-    width: 688px;
-    height: 250px;
+    width: 710px;
+    height: auto;
     margin: 5px;
-    margin-left: 15px;
-    padding: 3px;
-    
-}
+    margin-left: 5px;
+    padding: 3px;  
+     
+}  
 .tablaInformacion{
     display: block;
     float: left;
-    width: auto;
     height: auto;
+    width: 348px;
+    overflow-wrap: normal;
+    
+}
+.tabla2{
+    height: auto;
+    margin-left: 5px; 
+    
+}
 
-}
-#tabla2{
-    margin-left: 10px; 
-}
-#domicilioTitulo{
-    color: rgb(3, 39, 77);
-    font-size: 20px;
-}
+
 .nombreColumna{     /*td titulo de columnas de la informacion*/
-    font-size: 16px;
     font-weight: bold;
     color: rgb(97, 94, 94);
     padding-right: 8px;
 }
 td{
     padding: 3px;
-    font-size: 18px;
     font-weight: normal;
 }
-
 
 
 .boton{         /*class del boton diseño*/
@@ -155,4 +151,10 @@ td{
 .boton:hover{
     background-color: rgb(100, 130, 228);
     cursor: pointer;
+}
+
+.domicilioTitulo{
+    color: rgb(3, 39, 77);
+    font-weight: bold;
+    width: 180px;
 }

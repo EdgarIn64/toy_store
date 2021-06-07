@@ -9,9 +9,9 @@ body{
     margin-top: 1rem;
     margin-bottom: .1rem;
     font-size: 2.3rem;
-    color: rgb(41, 41, 90);
+    color: rgb(71, 71, 170);
 }
-#listaPublicacionesCompra{ /*seccion*/
+#listaPublicacionesCompra{ /*seccion tituloDomicilio*/
     display: block;
     float: left;
     width: 1020px;
@@ -53,24 +53,20 @@ hr{
     margin: 5px;
     margin-left: 15px;
     padding: 3px;
-  
+
 }
 .tablaInformacion{
     display: block;
     float: left;
     width: auto;
     height: auto;
-
 }
 .nombreColumna{     /*td titulo de columnas de la informacion*/
-    font-size: 16px;
     font-weight: bold;
-    color: rgb(93, 90, 90);
     padding-right: 8px;
 }
 td{
     padding: 3px;
-    font-size: 16px;
     font-weight: normal;
 }
 .imputsFormulario{
@@ -84,7 +80,6 @@ td{
 }
 .tituloImput{
     font-weight: bold;
-    font-size: 16px;
     width: 280px;
 } 
 select {
@@ -99,20 +94,20 @@ select {
 
  #tituloDomicilio{
     font-size: 2.2rem;
-    color: rgb(41, 41, 90);
+    color: rgb(91, 170, 91);
  }
  #informacionDomocilio{
     display: block;
     clear:both;
     width: 1020px;
     height: 370px;
-    background-color: rgba(18, 69, 180, 0.205);
+    background-color: rgba(3, 161, 101, 0.205);
     margin: 0%;
     margin-top: 2rem;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
     padding: .8rem;
     border-radius: 1.5rem;
-    
+    box-shadow: 0 10px 10px 0px rgba(11, 21, 43, 0.287)
 }
 .formularioInput{
     display: block;
@@ -122,6 +117,7 @@ select {
 }
 .inputformulario{
     width: 16rem;
+    font-size: 16px;
 }
 .tituloImputDomicilio{
     font-weight: bold;
@@ -166,7 +162,7 @@ select {
     font-size: 1.3rem;
  }
 
-.boton{         /*class del boton dise√±o*/
+.boton{         /*class del boton diseè´–o*/
     background-color: rgb(43, 120, 228);
     color: white;
     font-size: 1.1rem;
@@ -177,4 +173,104 @@ select {
 .boton:hover{
     background-color: rgb(100, 130, 228);
     cursor: pointer;
+}
+
+
+#totalCompras{
+    display:block;
+    float:right;
+    width: 13rem;
+    height: 3rem;
+    margin-top:2rem;
+    margin-right:40px;
+}
+
+#tarjeta{
+    display: block;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    width: 900px;
+    height: 440px;
+    background-color: rgba(255, 102, 0, 0.459);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 10px 0px rgba(11, 21, 43, 0.287)
+}
+#tituloTarjeta{
+    display: block;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 40px;
+
+    text-align: center;
+    font-size: 2.3rem;
+    padding: 5px;
+    padding-top: 15px;
+    font-weight: bolder;
+}
+#linea{
+    width: 850px;
+    border: rgba(156, 37, 7, 0.281) 1px solid;
+    margin-bottom: 12px;
+}
+.tarjetaDatos{
+    display: block;
+    float: left;
+    width: 415px;
+    height: 220px;
+    
+    margin: 15px;
+}
+.inputsTarjeta{
+    display: block;
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+}
+.campoTarjeta{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    margin: 8px;
+    margin-left: 0px;
+    display: block;
+    float: left;
+    margin-top: 0px;
+}
+.inputTarjeta{
+    width: 300px;
+    height: 18px;
+    display: block;
+    float: left;
+    margin-top: 0rem;
+    margin-right: 3rem;
+    font-size: 1.2rem;
+    color: black;
+    padding: 5px;
+}
+.imagenTarjeta{
+    width: 800px;
+    height: 100px;
+    display: block;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tarjetasImagen{
+    width: auto;
+    height: 100px;
+    
+} 
+#acomodar{
+    display: block;
+    float: right;
+    width: 280px;
+    height: 200px;
+    
+    box-sizing: border-box;
 }

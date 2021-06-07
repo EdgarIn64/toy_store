@@ -1,9 +1,11 @@
-<?php
+<?php  
 		
         $idUsuario=$_POST['sesion'];
         $idCarro=$_POST['id'];
+?>
 
-        require("../modelo/AccesoDatos.php"); 
+<?php 
+require("../modelo/AccesoDatos.php"); 
         $baseD = new AccesoDatos();  
         $baseD->conectar();
         $OMysqlD = $baseD->getConex(); 
@@ -14,7 +16,7 @@
         $baseD->desconectar();
         if($ResultD!=null){
         ?>
-            <script>alert("Se Elimino al carro de compras");</script> 
+            <script>alert("Se elimino al carro de compras");</script> 
         <?php 
         }
         else
@@ -26,5 +28,5 @@
     ?>
         <script> window.location.replace('../vista/carrito.php');</script> 
     <?php 
-             
+            
 ?>

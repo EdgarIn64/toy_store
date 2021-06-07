@@ -1,47 +1,43 @@
-
 .seccionMensajes{ /*seccion*/
     display: block;
-    float: left;
+    float: left; 
     width: 1080px;
     height: auto;
-    margin: 2rem;
-    box-shadow: 5 10px 10px 5px rgba(62, 66, 77, 0.37);
+    margin: 2rem; 
     padding: 5px;
-    margin-bottom: 2rem;
-    margin-top: 5rem;
+    margin-bottom: .5rem;
+    margin-top: 1.5rem;
     border-radius: 1rem;
-    background-color: rgba(227, 231, 240, 0.452);
+    background-color: rgba(187, 187, 187, 0.308);
+    box-shadow: 0 10px 10px 0px rgba(35, 64, 126, 0.287);
 }
-
+  
 td{
-    font-size: 20px;
+    font-size: 10px;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     padding-left: 2.2rem;
     padding-right: 2.2rem;
-    background-color: burlywood;
     margin: 0rem;
-    color: darkblue;
     font-weight: bold;
     margin-top: 4rem;
     
     
 }
-.links{
-    text-decoration: none;
-    font-size: 2rem;
-    
+strong{
+    color:rgba(0, 0, 128, 0.623)
 }
 
+
 table{
-    margin-top: 5rem;
+    margin-top: 1.7rem;
     margin-left: 4rem;
 }
 
 #titutoUsuario{
     color: rgb(15, 15, 46);
     font-weight: bold;
-    font-size: 2.7rem;
+    font-size: 2rem;
     margin-top: 1rem;
     padding: 1rem;
     
@@ -50,16 +46,17 @@ table{
 .imagenPublicacion{     /*imagen*/
     display: block;
     float: left;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin: 5px;
     margin-top: 2rem;
     margin-right: 5rem;
+    
 }
-.boton{         /*class del boton dise√±o*/
+.boton{         /*class del boton diseè´–o*/
     background-color: rgb(43, 120, 228);
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 7px;
     padding-left: 15px;
     padding-right: 15px;
@@ -67,4 +64,8 @@ table{
 .boton:hover{
     background-color: rgb(100, 130, 228);
     cursor: pointer;
+} 
+.botones{
+
+    padding: 1rem;
 }

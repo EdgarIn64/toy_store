@@ -1,21 +1,31 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html> 
-<head> 
-    <link rel="stylesheet" type="text/css" href="../css/historialEstilo.css"/>
+<head>  
+    <link rel="stylesheet" type="text/css" href="../css/historialEstilo.css?v=<?php echo time(); ?>"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="../js/cambiarPestanna.js"></script>
 <style>
     body{
         margin: 0; 
-    }
-</style>
+    } 
+</style> 
 <title>historialContendio</title>
 </head>
 <body onload="javascript:cambiarPestanna(pestanas,pestana1);"> 
-<?php //session_start();
-      require("comprasPublicaciones.php"); 
-      require("ventasPublicaciones.php"); ?>	
-	
+<?php 
+    require("comprasPublicaciones.php"); 
+    require("ventasPublicaciones.php"); 	
+	echo "
+        <script type='text/javascript'>
+            document.body.style.backgroundColor= '".$_SESSION['color_fondo']."';
+            document.body.style.color= '".$_SESSION['color_letra']."';
+            document.body.style.fontSize = '".$_SESSION['letra']."';
+        </script>
+        ";  
+?>
         <div class="contenedor"> 
             <div id="pestanas"> 
                 <ul id=lista> 
@@ -25,13 +35,12 @@
             </div>
             
             <div id="contenidopestanas">
-
             
                 <div id="cpestana1">
-                <?php ejemplo_compra(1); ?>
+                <?php compras(1); ?>
                 </div>
                 <div id="cpestana2">
-                <?php ejemplo_venta(); ?>
+                <?php ventas(); ?>
                 </div>
             </div>
         </div>

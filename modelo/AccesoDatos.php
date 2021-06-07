@@ -1,9 +1,9 @@
 <?php
 class AccesoDatos{
-	private $server = 'localhost';
-	private $username = 'root';
-	private $password = '';
-	private $database = 'toy_store';
+	private $server = 'localhost:3306';
+	private $username = 'promay20_toy_store';
+	private $password = 'Sagitario64?';
+	private $database = 'promay20_toy_store';
  	private $oConexion=null; 
  	public function getConex (){
  		return $this->oConexion;
@@ -11,7 +11,7 @@ class AccesoDatos{
 	function conectar(){
 		$bandera = false;
 		try {
-		  $this->oConexion = new mysqli("localhost", "root", "", "toy_store");
+		  $this->oConexion = new mysqli($this->server, $this->username, $this->password, $this->database);
 		  $bandera = true;
 		} catch (PDOException $e) {
 		  die('Connection Failed: ' . $e->getMessage());

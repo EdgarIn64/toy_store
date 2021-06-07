@@ -1,7 +1,8 @@
 
+
 function cambiarPestanna(pestannas,pestanna) { 
     
-
+    console.log("entro a la funcion de cambiarPestana");
     pestanna = document.getElementById(pestanna.id);
 
     listaPestannas = document.getElementById(pestannas.id);

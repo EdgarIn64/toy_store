@@ -1,7 +1,7 @@
-<?php 
+<?php  
+  session_start();
   require("../../modelo/AccesoDatos.php");
   function create() {
-    session_start();
     $db = new AccesoDatos();
     $db->conectar();
     $oMysql = $db->getConex();
@@ -15,11 +15,19 @@
       $_SESSION["datos"]=$arrRS;
 
       $_SESSION["usuario"] = true;
-      header("Location: ../principal.php");
-//      require('../../controlador/login.php');
+      echo "<script type='text/javascript'>
+            window.location.replace('../principal.php');
+        </script>";
     }
     else {
-      echo "<script type='text/javascript'>alert('No se lleno correctamente el formulario')</script>";
+      $sQ = "SELECT correo FROM usuarios WHERE correo = '".$_POST["correo"]."'";
+      $arr = $oMysql->query($sQ);
+      if($arr != null) {
+        echo "<script type='text/javascript'>alert('Correo electronico ya ocupado')</script>";
+      }
+      else {
+        echo "<script type='text/javascript'>alert('No se lleno correctamente el formulario')</script>";
+      }
     }
     $db->desconectar();
   }
@@ -32,6 +40,14 @@
     for ($i=0; $i<15; $i++)
       echo "document.getElementById('".$arr[$i]."').innerHTML ='".$_SESSION["datos"][0][$i]."';";
     echo "</script>";
+    if(file_exists('../../img/perfil/'.$_SESSION['datos'][0][0].'.png'))
+      $_SESSION['imagen']='../../img/perfil/'.$_SESSION['datos'][0][0].'.png';
+    else
+      $_SESSION['imagen']='../../img/perfil.png';
+  }
+
+  function readImage() {
+//    session_start();
     if(file_exists('../../img/perfil/'.$_SESSION['datos'][0][0].'.png'))
       $_SESSION['imagen']='../../img/perfil/'.$_SESSION['datos'][0][0].'.png';
     else
@@ -66,15 +82,12 @@
     $db->conectar();
     $oMysql = $db->getConex();
     $Query= "DELETE FROM usuarios WHERE id_usuario='".$_SESSION["datos"][0][0]."'";
-    $Query= "DELETE FROM publicaciones WHERE id_usuario='".$_SESSION["datos"][0][0]."'";
-    print($Query);
               //$oMysql->query    seria como Objeto.metodo
     $Result = $oMysql->query($Query);  // se lanza la consulta
     if($Result!=null) {
+      $_SESSION['usuario']=null;
+      session_destroy();
       header("Location: ../principal.php");
-      echo "<script type='text/javascript'>";
-      echo "alert(Se elimino su cuenta);";
-      echo "</script>";
     }
     else {
       echo "<script type='text/javascript'>alert('No se pudo eliminar la cuenta')</script>";
@@ -85,22 +98,10 @@
   function foto() {
     $nombre = $_SESSION['datos'][0][0].'.png';
     $guardado = $_FILES['foto']['tmp_name'];
-    if(!file_exists('foto')){
-      mkdir('foto',0777,true);
-      if(file_exists('foto')){
-        if(move_uploaded_file($guardado, '../../img/perfil/'.$nombre))
-          echo "";
-        else
-          echo "";
-      }
-    }
-    else {
-      if(move_uploaded_file($guardado, '../../img/perfil/'.$nombre))
-        echo "";
-      else
-        echo "";
-    }
-//    read();
+    if(move_uploaded_file($guardado, '../../img/perfil/'.$nombre))
+      $_SESSION['imagen'] = '../../img/perfil/'.$nombre;
+    else
+      echo "";
   }
 
 ?>

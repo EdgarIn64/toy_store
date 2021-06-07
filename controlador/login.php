@@ -1,11 +1,11 @@
 <?php
-/*
-	include_once("modelo\Usuario.php");
+    session_start();
+	include_once("modelo/Usuario.php");
 	$sErr="";
-	$correo="";//$nombre_usuario="";
+	$correo="";
 	$sNom="";
-	$password="";//$sPwd="";	
-	$oUsu = new Usuario(); //$oUsu
+	$password="";	
+	$oUsu = new Usuario();
 	
 	if (isset($_POST["correo"]) && !empty($_POST["correo"]) &&
 		isset($_POST["contra"]) && !empty($_POST["contra"])) {
@@ -29,8 +29,11 @@
 			error_log($e->getFile()." ".$e->getLine()." ".$e->getMessage(),0);
 			$sErr = "Error al acceder a la base de datos";
 		}
-		if ($sErr == "")
-			header("Location: vista/principal.php");
+		if ($sErr == "") {
+		    echo "<script type='text/javascript'>
+                    window.location.replace('vista/principal.php');
+                </script>";
+		}
 		else{
 			echo "<script type='text/javascript'>alert('No se pudo iniciar sesion')</script>";
 		}
@@ -39,6 +42,4 @@
 		if(isset($_POST['ingresar']))
 			header("Location: error.html");
 	}
-	*/
-	header("Location: vista/principal.php");
 ?>

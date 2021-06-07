@@ -1,17 +1,17 @@
 <?php 
-  require("../../modelo/AccesoDatos.php");
   session_start();
+  require("../../modelo/AccesoDatos.php");
   
   function create() {
     $db = new AccesoDatos();
     $db->conectar();
     $oMysql = $db->getConex();
-    $Query= "INSERT INTO publicaciones VALUES (' ','".$_POST["nombre"]."','Auxiliar.jpg','".$_POST["categoria"]."','".$_POST["precio"]."','".$_POST["medidas"]."','".$_POST["inventario"]."','".$_SESSION["datos"][0][0]."')";             
+    $img="Auxiliar.jpg";
+    $Query= "INSERT INTO publicaciones VALUES (0,'".$_POST["nombre"]."','".$img."','".$_POST["categoria"]."','".$_POST["precio"]."','".$_POST["medidas"]."','".$_POST["inventario"]."','".$_SESSION["datos"][0][0]."')";             
               //$oMysql->query    seria como Objeto.metodo
-    //print_r($Query);
     $Result = $oMysql->query( $Query );  // se lanza la consulta
-    if($Result!=null){
-      echo "<h1>Se registro correctamente</h1>";
+    if($Result!=null) {
+      echo "<h1>".$_POST["nombre"]." Se registro correctamente</h1>";
       $pubQuery = "SELECT * FROM publicaciones WHERE id_usuario = '".$_SESSION["datos"][0][0]."'";
       $arrRS = $db->ejecutarConsulta($pubQuery);
       $_SESSION["publicacion"]=$arrRS;
@@ -41,7 +41,7 @@
           if($i!=2)
             echo "document.getElementById('".$arr[$i]."').innerHTML ='".$_SESSION["publicacion"][0][$i]."';";
           if($i==3)
-            echo "document.getElementById('".$arr[$i]."').innerHTML ='".$cat[$_SESSION["publicacion"][0][3]-1] ."';";
+            echo "document.getElementById('".$arr[$i]."').innerHTML ='".$cat[$_SESSION["publicacion"][0][3]-1]."';";
         }
       echo "</script>";
     }
@@ -64,7 +64,9 @@
       $sQuery = "SELECT * FROM publicaciones WHERE id_publicacion = '".$_SESSION['publicacion'][0][0]."'";
       $arrRS = $db->ejecutarConsulta($sQuery);
       $_SESSION["publicacion"]=$arrRS;
-      header("Location: ver.php");
+      echo "<script type='text/javascript'>
+            window.location.replace('ver.php');
+        </script>";
     }
     else {
       echo "<script type='text/javascript'>alert('No se lleno correctamente el formulario')</script>";
@@ -81,16 +83,20 @@
               //$oMysql->query    seria como Objeto.metodo
     $Result = $oMysql->query( $Query );  // se lanza la consulta
     if($Result!=null) {
+      echo "<script type='text/javascript'>alert('No se pudo eliminar la cuenta')</script>";
       header("Location: lista.php");
     }
     else {
-      echo "<script type='text/javascript'>alert('No se lleno pudo eliminar la cuenta')</script>";
+      echo "<script type='text/javascript'>alert('No se pudo eliminar la cuenta')</script>";
     }
     $db->desconectar();
   }
 
   function foto() {
-    $nombre = $_FILES['img']['name'].$_SESSION['publicacion'][0][0].'.png';
+    $nombre = $_FILES['img']['name'].$_SESSION['publicacion'][0][0];
+    $nombre = str_replace(".jpg", "", $nombre);
+    $nombre = str_replace(".png", "", $nombre);
+    $nombre = $nombre.'.png';
     $guardado = $_FILES['img']['tmp_name'];
 
     $db = new AccesoDatos();
@@ -104,25 +110,10 @@
       $rs = $db->ejecutarConsulta($sQuery);
       $_SESSION["img"]="../../img/publicaciones/".$rs[0][0];
     }
-    if(!file_exists('imagen')){
-      mkdir('imagen',0777,true);
-      if(file_exists('imagen')){
-        if(move_uploaded_file($guardado, '../../img/publicaciones/'.$nombre))
-          echo "";
-        else{
-          $_SESSION["img"]="../../img/publicaciones/Auxiliar.jpg";
-          echo "";
-        }
-      }
-    }
-    else {
-      if(move_uploaded_file($guardado, '../../img/publicaciones/'.$nombre))
-        echo "";
-      else{
-        $_SESSION["img"]="../../img/publicaciones/Auxiliar.jpg";
-        echo "";
-      }
-    }
+    if(move_uploaded_file($guardado, '../../img/publicaciones/'.$nombre))
+      echo "";
+    else
+      $_SESSION["img"]="../../img/publicaciones/Auxiliar.jpg";
   }
 
 ?>

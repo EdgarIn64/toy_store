@@ -1,65 +1,67 @@
 <style type="text/css">
 
-input {
-	margin-left: 5px;
-	font-size: 1.5rem; 
-	margin-bottom: 5px;"
-}
-.icono .iconotext {
-  visibility: hidden;
-  background-color: #72d;
-  color: #fff;
-  text-align: center;
-  width: auto;
-  padding: 2px;
-  border-radius: 6px;
-  right: 10px;
-  /* Position the tooltip */
-  position: relative;
-  z-index: -1;
-  float: left;
-  font-size: 1.2rem;
-}
-
-.icono:hover {
-    visibility: visible;
-}
-.menu a {
-    text-decoration:none;
-    float: left;
-    font-size: 1.5rem;
-    color: white;
-}
-</style>
-	<div class="menu">
-		<a href="historial.php" class="icono" style="margin-left: 20px;">
-			<img src="../img/historial.png" alt="historial"><br>
-			<span class="iconotext">Historial</span>
-		</a>
-		<a href="categorias.php" class="icono">
-			<img src="../img/categorias.png" alt="categorias"><br>
-			<span class="iconotext">Categorias</span>
-		</a>
-		
-		<input type="search" name="buscar" placeholder="buscar">
-
-	<div style="float: right;">
-		<a href="carrito.php" class="icono" style="margin-right: 15px;">
-			<img src="../img/carrito.png" alt="carrito"><br>
-			<span class="iconotext">Carrito</span>
-		</a>
-		<a href="mensajes.php" class="icono">
-			<img src="../img/chat.png" alt="chat"><br>
-			<span class="iconotext">Mensajes</span>
-		</a>
-		<a href="publicacion/lista.php" class="icono">
-			<img src="../img/publicacion.png" alt="publicacion"><br>
-			<span class="iconotext">Publica<br>ci&oacute;n</span>
-		</a>
-		<a href="usuario/cuenta.php" class="icono" style="margin-right: 15px;">
-			<img src="../img/cuenta.png"  alt="cuenta"><br>
-			<span class="iconotext">Cuenta</span>
-		</a>
-		
+	input {
+		margin-left: 5px;
+		font-size: 1.5rem; 
+		margin-bottom: 5px;
+	}
+	.icono .iconotext {
+	  visibility: hidden;
+	  background-color: #72d;
+	  color: #fff;
+	  text-align: center;
+	  width: auto;
+	  padding: 2px;
+	  border-radius: 6px;
+	  right: 10px;
+	  /* Position the tooltip */
+	  position: relative;
+	  z-index: -1;
+	  float: left;
+	  font-size: 1.2rem;
+	}
+	
+	.icono:hover {
+		visibility: visible;
+	}
+	.menu a {
+		text-decoration:none;
+		float: left;
+		font-size: 1.5rem;
+		color: white;
+	}
+	</style>
+		<div class="menu">
+			<a href="historial.php" class="icono" style="margin-left: 20px;">
+				<img src="../img/historial.png" alt="historial"><br>
+				<span class="iconotext">Historial</span>
+			</a>
+			<a href="categorias.php" class="icono">
+				<img src="../img/categorias.png" alt="categorias"><br>
+				<span class="iconotext">Categorias</span>
+			</a>
+			
+		<form method="post" action="" style="text-align: left">
+			<input type="search" name="buscar" placeholder="buscar">
+			<input type="submit" name="busqueda" value="Realizar busqueda">
+	
+			<div style="float: right;">
+				<a href="carrito.php" class="icono" style="margin-right: 15px;">
+					<img src="../img/carrito.png" alt="carrito" style="background-color: rgb(220, 140, 32); padding-right: 100%;"><br>
+					<span class="iconotext">Carrito</span>
+				</a>
+				<a href="mensajes.php" class="icono">
+					<img src="../img/chat.png" alt="chat" style="background-color: rgb(220, 140, 32); padding-right: 100%;"><br>
+					<span class="iconotext">Mensajes</span>
+				</a>
+				<a href="publicacion/lista.php" class="icono">
+					<img src="../img/publicacion.png" alt="publicacion" style="background-color: rgb(220, 140, 32); padding-right: 100%;"><br>
+					<span class="iconotext">Publica<br>ci&oacute;n</span>
+				</a>
+				<a href="usuario/cuenta.php" class="icono" style="margin-right: 15px;">
+					<img src="../img/cuenta.png"  alt="cuenta" style="background-color: rgb(220, 140, 32);"><br>
+					<span class="iconotext">Cuenta</span>
+				</a>		
+			</div>
+		</form>
 	</div>
-</div>

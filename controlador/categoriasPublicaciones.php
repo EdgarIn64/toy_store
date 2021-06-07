@@ -1,82 +1,37 @@
 <?php
-
-    function ejemplo($valor) {
-        echo ' 
-            <section id="listaPublicaciones" class="publicpestana'.$valor.'">
-
-            <div class="publicacionCategoria publicpestana'.$valor.'">
-                <img src="../img/Auxiliar.jpg" alt="" class="imagenPublicacion publicpestana'.$valor.'">';
-                if(isset($_POST['ver'])){
-                    echo "<script type='text/javascript'>
-                        window.location.replace('../vista/publicacion/general.php');
-                    </script>";
-                }
-                echo '<div class="informacionPublicacion publicpestana'.$valor.'">
-                    <table class="tablaInformacion publicpestana'.$valor.'">
-                        <tr>
-                            <td class="nombreColumna publicpestana'.$valor.'">Nombre producto: </td>
-                            <td>Nombre_producto</td>
-                        </tr>
-                        <tr>
-                            <td class="nombreColumna publicpestana'.$valor.'">Precio: </td>
-                            <td>Precio</td>
-                        </tr>
-                        <tr>
-                            <td class="nombreColumna publicpestana'.$valor.'">Categor&iacute;a: </td>
-                            <td>Descripcion</td>
-                        </tr>
-                        <tr>
-                            <td class="nombreColumna publicpestana'.$valor.'">Medidas: </td>
-                            <td>Medidas</td>
-                        </tr>
-                        <tr>
-                            <td class="nombreColumna publicpestana'.$valor.'">Inventario: </td>
-                            <td>Inventario</td>
-                        </tr>
-                        <tr>
-                            <td class="nombreColumna publicpestana'.$valor.'">Vendedor: </td>
-                            <td>Nombre</td> 
-                        </tr>
-                        <tr>
-                            <td class="nombreColumna publicpestana'.$valor.'">id publicaci&oacute;n: </td>
-                            <td>ID</td>
-                        </tr> 
-                    </table>
-                    
-                    <form method="post" action="">
-                        <input type="text" name="IdPublicacion" value="ID" style="display: none;">
-                        <input type="text" name="IdSesion" value="ID" style="display: none;">
-                        <input type="submit" class="agregarCarro boton publicpestana'.$valor.'" value="Agregar al carro" name="agregar">
-                    </form>   
-
-                    <form method="post" action=""> 
-                        <input type="submit" class="verPublicacion boton publicpestana'.$valor.'" value="Ver publicaci&oacute;n" name="ver"]">
-                    </form>';
-            echo '</div>
-            </div>
-            <hr> 
-            ';
-            echo "</section>"; 
-            
-    }
+    session_start();
+    require("../modelo/AccesoDatos.php");   
 
     function categoria($valor) {
-        require("../modelo/AccesoDatos.php");   
-        $db = new AccesoDatos();
+        $db = new AccesoDatos();  
         $db->conectar();
         $oMysql = $db->getConex();
 
         $idSesion= $_SESSION['datos'][0][0];
 
-        $Query= "SELECT id_publicacion, nombre_producto, imagen, categorias.descripcion, precio, medidas, inventario, usuarios.nombre, usuarios.apellido_paterno, usuarios.apellido_materno 
+        $Query= "SELECT id_publicacion, nombre_producto, imagen, categorias.descripcion, precio, medidas, inventario, usuarios.nombre, usuarios.apellido_paterno, usuarios.apellido_materno, publicaciones.id_usuario 
         FROM ((publicaciones INNER JOIN categorias ON publicaciones.id_categoria = categorias.id_categoria AND categorias.id_categoria=$valor) 
-        INNER JOIN usuarios ON publicaciones.id_usuario = usuarios.id_usuario)";             
+        INNER JOIN usuarios ON publicaciones.id_usuario = usuarios.id_usuario) WHERE publicaciones.id_usuario != $idSesion";             
                   //$oMysql->query    seria como Objeto.metodo
         $Result = $oMysql->query( $Query );  // se lanza la consulta
-        $db->desconectar();
+        $db->desconectar(); 
         if($Result!=null){
             while($row =$Result->fetch_array()){                
                 
+                $inventario=$row["inventario"];
+                if($inventario<=0){
+                    $inventario="<strong> Agotado por ahora </strong>";
+                    echo"
+                    <script> 
+                        function publicacion".$row["id_publicacion"]."(){
+                            var Css = { 'background': 'rgba(116, 113, 113, 0.712)', 'color':'black'};
+                            $('#publicacionTA').attr('disabled', true);
+                            $('#publicacion".$row["id_publicacion"]." ').css(Css);
+                        }
+                    </script>
+                    ";
+                }    
+ 
                 echo ' 
                 <section id="listaPublicaciones" class="publicpestana'.$valor.'">
 
@@ -109,7 +64,7 @@
                             </tr>
                             <tr>
                                 <td class="nombreColumna publicpestana'.$valor.'">Inventario: </td>
-                                <td>'.$row["inventario"].'</td>
+                                <td>'.$inventario.'</td>
                             </tr>
                             <tr>
                                 <td class="nombreColumna publicpestana'.$valor.'">Vendedor: </td>
@@ -125,7 +80,7 @@
                         <form method="post" action="">
                             <input type="text" name="IdPublicacion" value="'.$row["id_publicacion"].'" style="display: none;">
                             <input type="text" name="IdSesion" value="'.$idSesion.'" style="display: none;">
-                            <input type="submit" class="agregarCarro boton publicpestana'.$valor.'" value="Agregar al carro" name="agregar">
+                            <input type="submit" class="agregarCarro boton publicpestana'.$valor.'" value="Agregar al carro" name="agregar" id="publicacion'.$row["id_publicacion"].'">
                         </form>   
 
                         <form method="post" action=""> 
@@ -135,7 +90,18 @@
                 </div>
                 <hr> 
                 ';
-                echo "</section>"; 
+                echo "</section>
+                "; 
+                $inventario=$row["inventario"];
+                if($inventario<=0){
+                    echo"
+                    <script>
+                            var Css = { 'background': 'rgba(116, 113, 113, 0.712)', 'color':'black'};
+                            $('#publicacion".$row["id_publicacion"]." ').attr('disabled', true);
+                            $('#publicacion".$row["id_publicacion"]." ').css(Css);
+                    </script>
+                    ";
+                }  
             }
 
         }

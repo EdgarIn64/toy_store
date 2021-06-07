@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,22 +11,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="../../img/quintos.png">
 	<link rel="stylesheet" type="text/css" href="../../css/estilo.css?v=<?php echo time(); ?>">
+	<script type="text/javascript" src="../../js/titulo.js"></script>
 </head>
 <body>
 	<?php  
-		require('../../header.html');
-		/*
-		require('../../controlador/crud_usuario.php');
-		session_start();
 		if(!isset($_SESSION["usuario"])){
-			header("Location: ../index.php");
+			echo "<script type='text/javascript'>
+                    window.location.replace('../../index.php');
+                </script>";
 		}
+		require('../../header.html');
+		require('../../controlador/crud_usuario.php');
 		if(!isset($_SESSION['imagen']))
 			$_SESSION["imagen"]="../../img/perfil.png";
 		if(isset($_POST['subir'])){
 			foto();
 		}
-		*/
+		readImage();
+		echo "
+		<script type='text/javascript'>
+			document.body.style.backgroundColor= '".$_SESSION['color_fondo']."';
+			document.body.style.color= '".$_SESSION['color_letra']."';
+			document.body.style.fontSize = '".$_SESSION['letra']."';
+		</script>
+		";
 	?>
 	<div class="menu">
 		<a href="../principal.php">
@@ -35,10 +46,8 @@
 	</div>	
 
 	<div class="presentacion">
-		<!--
-		<img src="<?php //echo $_SESSION['imagen'] ?>?v=<?php echo time(); ?>" width="250" alt="perfil">
-		-->
-		<img src="../../img/perfil.png" width="250" alt="perfil">
+		
+		<img src="<?php echo $_SESSION['imagen'] ?>?v=<?php echo time(); ?>" width="250" alt="perfil">
 		<br><br>
 		<form method="post" action="" enctype="multipart/form-data">
 			<input type="file" name="foto">
@@ -81,8 +90,8 @@
 		<br><br><br>
 		<input type="submit" class="boton" name="eliminar" value="Eliminar Cuenta">
 	</form>
-	<br><br><br><br><br>
-	<br><br><br><br><br>
+	<br><br><br>
+	<br><br><br>
 	<div class="datos">
 		<table>
 			<tr>
@@ -130,7 +139,7 @@
 
 	<label id="separacion"></label>
 	<?php
-//		read();
+		read();
 		if(isset($_POST['editar'])){
 			echo "<script type='text/javascript'>
                     window.location.replace('editar.php');
@@ -141,11 +150,12 @@
                     window.location.replace('direccion.php');
                 </script>";
 		}
-		if(isset($_POST['eliminar']))
-			echo '<script type="text/javascript">alert("Conexion inhabilitada");</script>';
-//			delete();
+		if(isset($_POST['eliminar'])){
+			delete();
+		}
+
 		if(isset($_POST['cerrar'])){
-//			session_destroy();
+			session_destroy();
 			echo "<script type='text/javascript'>
                     window.location.replace('../../index.php');
                 </script>";

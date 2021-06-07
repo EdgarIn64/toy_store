@@ -1,8 +1,10 @@
-
+#tituloListaCompra{
+    text-align: center;
+}
 #tituloListaCarrito{
     display: block;
     clear: both; 
-    font-size: 2rem;
+
     padding: 3px;
     margin-left: 3rem;
     margin-top: 1rem;
@@ -46,7 +48,7 @@ hr{
     display: block;
     float: left;
     width: 705px;
-    height: 250px;
+    height: auto;
     margin: 5px;
     margin-left: 15px;
     padding: 3px;
@@ -57,17 +59,15 @@ hr{
     float: left;
     width: auto;
     height: auto;
-
+    overflow-wrap: normal;
 }
 .nombreColumna{     /*td titulo de columnas de la informacion*/
-    font-size: 20px;
     font-weight: bold;
-    color: rgb(97, 94, 94);
+    color: rgb(91, 170, 91);
     padding-right: 8px;
 }
 td{
     padding: 3px;
-    font-size: 18px;
     font-weight: normal;
 }
 
@@ -111,5 +111,81 @@ td{
 .boton:hover{
     background-color: rgb(100, 130, 228);
     cursor: pointer;
+}
+.tituloContenidoVacio{
+    font-size: 1.6rem;
+    margin: 1rem;
+    color:crimson;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}  
+.imputsFormulario{
+    display: block;
+    float:right;
+    width: 250px;
+    height: auto;
+    margin: 5px;
+    margin-right: 0;
+    font-size: 16px;
+  /*  border: blueviolet 1px solid;*/
+}
+
+.tituloImput{
+    display: block;
+    float: left;
+    font-size: 1.3rem;
+    margin-right: 5px;
+}
+.pagar{
+    width: 8rem;
+    font-size: 1.1rem;
+}
+#total{
+    height: 2.3rem;
+    width: 9rem;
+    display: block;
+    float: left;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    border: none;
+    background-color: transparent;
+    text-align: center; 
+}
+.total{
+    height: auto;
+    text-align: center;
+    width: 15rem;
+    display: block;
+    float: right;
+    margin-right: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgba(43, 120, 228, 0.37);
+    
+}
+.total label{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3rem;
+    padding: 5px;
+    width: 13.6rem;
+    
+}
+#signo{
+    height: 2rem;
+    width: 1.4rem;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+   
 }
 

@@ -1,6 +1,6 @@
 <?php 
-include_once("modelo/AccesoDatos.php");
 session_start();
+include_once("modelo/AccesoDatos.php");
 
 class Usuario {
 	protected $nombre="";
